@@ -1,6 +1,6 @@
 # exxonmobil-valuation
 Full 5-year intrinsic valuation suite for ExxonMobil, including DCF, WACC build, trading comps, precedent transactions, and an LBO scenario with a Python-based valuation engine.
-# ExxonMobil Valuation – 5-Year DCF & LBO Framework
+# ExxonMobil Valuation - 5-Year DCF & LBO Framework
 
 This repository contains a compact but professional valuation framework for **ExxonMobil (XOM)**, structured as if for an **investment banking analyst** or **equity research** workflow.
 
