@@ -6,12 +6,12 @@ This repository contains a compact but professional valuation framework for **Ex
 
 It replicates core valuation deliverables used in real transactions and public-company coverage:
 
-1) **5-year intrinsic valuation via DCF**  
-2) **WACC derivation using market inputs**  
-3) **Trading comparables infrastructure**  
-4) **Precedent transactions logic**  
-5) **Infrastructure-style LBO scenario**  
-6) **Python valuation engine + Excel models**
+**1) 5-year intrinsic valuation via DCF**  
+**2) WACC derivation using market inputs**  
+**3) Trading comparables infrastructure**  
+**4) Precedent transactions logic**  
+**5) Infrastructure-style LBO scenario**  
+**6) Python valuation engine + Excel models**
 
 ---
 
