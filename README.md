@@ -164,16 +164,25 @@ current market price.
 
 ### Trading Comparables Cross-Check - *Pending Stage 8*
 
-This section will benchmark XOM against global integrated energy peers using:
+A trading comps framework is implemented in the notebook (Stage 8),
+benchmarks **XOM** against a global integrated peer set:
 
-- **EV/EBITDA**
-- **P/E**
-- **FCF Yield**
+- CVX, SHEL, BP, TTE, COP
+
+The model is structured to compare:
+
+- **EV/EBITDA 2025E**
+- **P/E 2025E**
+- **FCF yield 2025E**
+
+and compute **peer medians vs XOM**.  
+
+Multiples are left intentionally blank (`np.nan`) in the public repo so
+that they can be populated with live data from the user’s preferred
+provider before use in interviews or case studies.
 
 **Objective:** validate whether relative multiples corroborate or challenge
 the DCF conclusion.
-
-*Peer set selection and data ingestion in progress.*
 
 ---
 
