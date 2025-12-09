@@ -171,23 +171,23 @@ current market price.
 A trading comps framework is implemented in the notebook and benchmarks
 **ExxonMobil (XOM)** against a global integrated energy peer set:
 
-**-Chevron (CVX)**
+- **Chevron (CVX)**
 
-**-Shell plc (SHEL)**
+- **Shell plc (SHEL)**
 
-**-BP plc (BP)**
+- **BP plc (BP)**
 
-**-TotalEnergies SE (TTE)**
+- **TotalEnergies SE (TTE)**
 
-**-ConocoPhillips (COP)**
+- **ConocoPhillips (COP)**
 
 The model compares:
 
-**-EV/EBITDA 2025E**
+- **EV/EBITDA 2025E**
 
-**-P/E 2025E**
+- **P/E 2025E**
 
-**-FCF Yield 2025E**
+- **FCF Yield 2025E**
 
 and computes **peer medians** and **relative premiums/discounts** versus XOM.
 
@@ -200,9 +200,9 @@ or contradict the intrinsic value obtained via the DCF.
 
 This module will analyse sector M&A transactions, comparing:
 
-**-Deal EV/EBITDA**
-**-Premium-to-undisturbed share prices**
-**-Asset/cyclicality characteristics vs. XOM**
+- **Deal EV/EBITDA**
+- **Premium-to-undisturbed share prices**
+- **Asset/cyclicality characteristics vs. XOM**
 
 **Objective:** establish a valuation floor/ceiling grounded in real deal activity.
 
@@ -232,16 +232,16 @@ to a real-data, capital-markets-ready framework.
 
 ### Deliverables Completed
 
-**-Clean DCF engine** (`src/dcf.py`)
-**-Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
-**-Market-based WACC** derived from CAPM & capital structure
-**-Enterprise value computed** using real cash flows
-**-Equity value & intrinsic per-share price**
-**-Historical capital-structure valuation impact** (optional module)
-**-EV vs WACC sensitivity chart**
-**-Final valuation output exported** to  
+- **Clean DCF engine** (`src/dcf.py`)
+- **Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
+- **Market-based WACC** derived from CAPM & capital structure
+- **Enterprise value computed** using real cash flows
+- **Equity value & intrinsic per-share price**
+- **Historical capital-structure valuation impact** (optional module)
+- **EV vs WACC sensitivity chart**
+- **Final valuation output exported** to  
   `data/processed/xom_final_valuation.csv`
-**-Valuation conclusion added** to `README.md`
+- **Valuation conclusion added** to `README.md`
 
 ---
 
