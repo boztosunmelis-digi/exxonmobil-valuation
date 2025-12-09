@@ -205,7 +205,7 @@ infrastructure-like asset.
 *Exit assumptions and debt schedule to be integrated after comps.*
 
 ---
-## Build Status — Stage 7 Complete
+## Build Status - Stage 7 Complete
 
 This repository has successfully implemented the first fully operational leg
 of the valuation stack. The model now transitions from demonstration logic
