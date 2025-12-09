@@ -165,7 +165,7 @@ current market price.
 ### Trading Comparables Cross-Check 
 
 > **Note:** Trading multiples are forward-looking (2025E-style) and should  
-> be refreshed from a data provider such as Bloomberg / Refinitiv / Koyfin /  
+> be refreshed from a data provider such as Bloomberg/Refinitiv/Koyfin/  
 > FactSet before using this model in a professional setting.
 
 A trading comps framework is implemented in the notebook and benchmarks
@@ -196,17 +196,33 @@ or contradict the intrinsic value obtained via the DCF.
 
 ---
 
-### Precedent Transactions
+### Precedent Transactions Cross-Check
 
-This module will analyse sector M&A transactions, comparing:
+> **Note:** Precedent deal multiples are event-driven and cyclical, not perpetual valuations. They should be refreshed from public filings, > press releases, or data providers such as Bloomberg, Refinitiv, Koyfin, or FactSet when updating this model for interviews or case studies.
 
-- **Deal EV/EBITDA**
-- **Premium-to-undisturbed share prices**
-- **Asset/cyclicality characteristics vs. XOM**
+This module benchmarks ExxonMobil’s valuation against **recent large-scale oil & gas M&A transactions**, where acquirers paid control premiums for strategic reserves, scale, and basin access.
 
-**Objective:** establish a valuation floor/ceiling grounded in real deal activity.
+The framework analyses:
 
-*Transaction universe under construction.*
+- **Deal EV/EBITDA multiples**
+
+- **Transaction enterprise values**
+
+- **Premiums to undisturbed targets**
+
+- **Asset quality and cyclicality drivers**
+
+By applying **median EV/EBITDA multiples** from landmark transactions to ExxonMobil’s forward EBITDA, we generate an **implied enterprise-value range** that acts as:
+
+- a **valuation floor** (low-multiple transactions, cyclical assets), and
+
+- a **valuation ceiling** (premium basin access, strategic reserves, advantaged infrastructure)
+
+This provides a **market-tested check** on our DCF:
+
+- If precedent multiples imply **EVs materially below DCF**, markets may question ExxonMobil’s long-term FCF durability.
+
+- If they imply **EVs above DCF**, precedent activity may validate strategic scarcity value or consolidation premiums.
 
 ---
 
