@@ -198,7 +198,7 @@ or contradict the intrinsic value obtained via the DCF.
 
 ### Precedent Transactions Cross-Check
 
-> **Note:** Precedent deal multiples are event-driven and cyclical, not perpetual valuations. They should be refreshed from public filings, > press releases, or data providers such as Bloomberg, Refinitiv, Koyfin, or FactSet when updating this model for interviews or case studies.
+> **Note:** Precedent deal multiples are event-driven and cyclical, not perpetual valuations. They should be refreshed from public filings, press releases, or data providers such as Bloomberg, Refinitiv, Koyfin, or FactSet when updating this model for interviews or case studies.
 
 This module benchmarks ExxonMobil’s valuation against **recent large-scale oil & gas M&A transactions**, where acquirers paid control premiums for strategic reserves, scale, and basin access.
 
