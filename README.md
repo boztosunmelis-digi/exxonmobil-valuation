@@ -162,27 +162,37 @@ current market price.
 
 ---
 
-### Trading Comparables Cross-Check - *Pending Stage 8*
+### Trading Comparables Cross-Check 
 
-A trading comps framework is implemented in the notebook (Stage 8),
-benchmarks **XOM** against a global integrated peer set:
+> **Note:** Trading multiples are forward-looking (2025E-style) and should  
+> be refreshed from a data provider such as Bloomberg / Refinitiv / Koyfin /  
+> FactSet before using this model in a professional setting.
 
-- CVX, SHEL, BP, TTE, COP
+A trading comps framework is implemented in the notebook and benchmarks
+**ExxonMobil (XOM)** against a global integrated energy peer set:
 
-The model is structured to compare:
+**-Chevron (CVX)**
 
-- **EV/EBITDA 2025E**
-- **P/E 2025E**
-- **FCF yield 2025E**
+**-Shell plc (SHEL)**
 
-and compute **peer medians vs XOM**.  
+**-BP plc (BP)**
 
-Multiples are left intentionally blank (`np.nan`) in the public repo so
-that they can be populated with live data from the user’s preferred
-provider before use in interviews or case studies.
+**-TotalEnergies SE (TTE)**
 
-**Objective:** validate whether relative multiples corroborate or challenge
-the DCF conclusion.
+**-ConocoPhillips (COP)**
+
+The model compares:
+
+**-EV/EBITDA 2025E**
+
+**-P/E 2025E**
+
+**-FCF Yield 2025E**
+
+and computes **peer medians** and **relative premiums/discounts** versus XOM.
+
+**Objective:** assess whether market-implied valuation multiples corroborate
+or contradict the intrinsic value obtained via the DCF.
 
 ---
 
@@ -190,9 +200,9 @@ the DCF conclusion.
 
 This module will analyse sector M&A transactions, comparing:
 
-- **Deal EV/EBITDA**
-- **Premium-to-undisturbed share prices**
-- **Asset/cyclicality characteristics vs. XOM**
+**-Deal EV/EBITDA**
+**-Premium-to-undisturbed share prices**
+**-Asset/cyclicality characteristics vs. XOM**
 
 **Objective:** establish a valuation floor/ceiling grounded in real deal activity.
 
@@ -222,16 +232,16 @@ to a real-data, capital-markets-ready framework.
 
 ### Deliverables Completed
 
-- **Clean DCF engine** (`src/dcf.py`)
-- **Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
-- **Market-based WACC** derived from CAPM & capital structure
-- **Enterprise value computed** using real cash flows
-- **Equity value & intrinsic per-share price**
-- **Historical capital-structure valuation impact** (optional module)
-- **EV vs WACC sensitivity chart**
-- **Final valuation output exported** to  
+**-Clean DCF engine** (`src/dcf.py`)
+**-Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
+**-Market-based WACC** derived from CAPM & capital structure
+**-Enterprise value computed** using real cash flows
+**-Equity value & intrinsic per-share price**
+**-Historical capital-structure valuation impact** (optional module)
+**-EV vs WACC sensitivity chart**
+**-Final valuation output exported** to  
   `data/processed/xom_final_valuation.csv`
-- **Valuation conclusion added** to `README.md`
+**-Valuation conclusion added** to `README.md`
 
 ---
 
