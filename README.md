@@ -88,7 +88,7 @@ The valuation stack combines multiple approaches commonly used in investment ban
 - Models IRR profile for a financial sponsor considering oil & gas infrastructure assets
 
 **Why this matters:**  
-This is not a single DCF. It is a **full valuation stack** that triangulates intrinsic, relative, and transaction-based value — exactly what analysts produce before issuing a rating or a fairness opinion.
+This is not a single DCF. It is a **full valuation stack** that triangulates intrinsic, relative, and transaction-based value - exactly what analysts produce before issuing a rating or a fairness opinion.
 
 ## Files Included
 
