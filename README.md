@@ -196,7 +196,7 @@ or contradict the intrinsic value obtained via the DCF.
 
 ---
 
-### Precedent Transactions - *Pending Stage 9*
+### Precedent Transactions
 
 This module will analyse sector M&A transactions, comparing:
 
@@ -210,7 +210,7 @@ This module will analyse sector M&A transactions, comparing:
 
 ---
 
-### Infrastructure-Style LBO Scenario - *Pending Stage 10*
+### Infrastructure-Style LBO Scenario 
 
 A leverage-case scenario assessing:
 
