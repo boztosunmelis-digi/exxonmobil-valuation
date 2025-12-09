@@ -120,7 +120,7 @@ valuation frameworks are scaffolded for subsequent stages.
 
 ---
 
-### Discounted Cash Flow (DCF) – Completed
+### Discounted Cash Flow (DCF) - Completed
 
 **Base Case Assumptions**
 
@@ -162,7 +162,7 @@ current market price.
 
 ---
 
-### Trading Comparables Cross-Check – *Pending Stage 8*
+### Trading Comparables Cross-Check - *Pending Stage 8*
 
 This section will benchmark XOM against global integrated energy peers using:
 
@@ -177,13 +177,13 @@ the DCF conclusion.
 
 ---
 
-### Precedent Transactions – *Pending Stage 9*
+### Precedent Transactions - *Pending Stage 9*
 
 This module will analyse sector M&A transactions, comparing:
 
 - **Deal EV/EBITDA**
 - **Premium-to-undisturbed share prices**
-- **Asset / cyclicality characteristics vs. XOM**
+- **Asset/cyclicality characteristics vs. XOM**
 
 **Objective:** establish a valuation floor/ceiling grounded in real deal activity.
 
@@ -191,7 +191,7 @@ This module will analyse sector M&A transactions, comparing:
 
 ---
 
-### Infrastructure-Style LBO Scenario – *Pending Stage 10*
+### Infrastructure-Style LBO Scenario - *Pending Stage 10*
 
 A leverage-case scenario assessing:
 
@@ -199,7 +199,7 @@ A leverage-case scenario assessing:
 - debt capacity relative to commodity cash flows,
 - sponsor IRR at 5-year exit.
 
-**Objective:** determine whether XOM can be valued as a yield-bearing
+**Objective:** determine whether XOM can be valued as a yield-learing
 infrastructure-like asset.
 
 *Exit assumptions and debt schedule to be integrated after comps.*
@@ -230,19 +230,19 @@ to a real-data, capital-markets-ready framework.
 
 | Component | Status |
 |----------|-------|
-| Real DCF Valuation | **✔️ Completed** |
-| Sensitivity Analysis | **✔️ Completed** |
-| CSV Export | **✔️ Completed** |
-| README Integration | **✔️ Completed** |
-| Trading Comps | 🔜 Stage 8 |
-| Precedent Transactions | 🔜 Stage 9 |
-| LBO Scenario | 🔜 Stage 10 |
+| Real DCF Valuation | **Completed** |
+| Sensitivity Analysis | **Completed** |
+| CSV Export | **Completed** |
+| README Integration | **Completed** |
+| Trading Comps | Stage 8 |
+| Precedent Transactions | Stage 9 |
+| LBO Scenario | Stage 10 |
 
 ---
 
 ### Next Step
 
-**Stage 8 – Trading Comparables Cross-Check**
+**Stage 8 - Trading Comparables Cross-Check**
 
 Building a peer set and integrating relative valuation metrics (EV/EBITDA,
 P/E, FCF yield) to confirm or challenge the DCF outcome.
