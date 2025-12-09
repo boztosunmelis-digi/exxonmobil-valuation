@@ -108,28 +108,144 @@ The repository contains all components expected in a real valuation workflow:
 
 Together, these files form a **complete valuation stack** suitable for investment banking, equity research, corporate finance, or private equity modelling tests.
 
+Our DCF yields an intrinsic value of **$70.67/share**, based on a WACC of **9.06%** and a terminal growth rate of **2.00%**. This implies that ExxonMobil is currently **~39% overvalued** relative to its market price of **$115.98** as of December 2025.
+
 ## Valuation Summary & Result
 
-The intrinsic valuation outputs for **ExxonMobil (XOM)** converge across multiple methodologies:
+The intrinsic valuation outputs for **ExxonMobil (XOM)** are structured across
+multiple methodologies commonly used in investment banking and equity
+research workflows. At this stage, the **DCF** is fully implemented using
+real historical cash flows and a market-based WACC, while the other
+valuation frameworks are scaffolded for subsequent stages.
 
-### **DCF Output**
-- 5-year projected free cash flows discount to: **Enterprise Value ≈ $XXXbn**
-- Implied **equity value per share**: **$XX–$XX**
-- Sensitivities run across:
-  - **WACC range**: X.X% – X.X%
-  - **Terminal growth**: X.X% – X.X%
+---
 
-### **Trading Comparables Cross-Check**
-- ExxonMobil trades at a **discount/premium** to energy peers on EV/EBITDA and P/E multiples
-- Relative valuation places the implied share price in the range of **$XX–$XX**
+### Discounted Cash Flow (DCF) – Completed
 
-### **Precedent Transactions**
-- Energy M&A multiples imply an equity value consistent with / above / below DCF midpoint  
-  (depending on whether sector deal premiums are applied)
+**Base Case Assumptions**
 
-### **Infrastructure-Style LBO Scenario**
-- Modeled sponsor returns (IRR) suggest oil & gas infrastructure assets can support leverage
-- Implied valuation falls within **$XX–$XX**, bounded by capital structure constraints
+| Metric | Value |
+|-------:|-------|
+| WACC | **9.06%** |
+| Terminal growth (g) | **2.00%** |
+| Enterprise value (EV) | **\$358.6bn** |
+| Net debt | **\$28.2bn** |
+| Equity value | **\$330.4bn** |
+| Shares outstanding | **4.285bn** |
+| **Implied intrinsic value** | **\$70.67/share** |
+
+---
+
+### Market Check
+
+- **Current XOM price (Dec 2025):** **\$115.98/share**  
+- **DCF implied intrinsic price:** **\$70.67/share**  
+- **Implied mispricing:** ExxonMobil appears **≈39% overvalued** vs. intrinsic value
+
+\[
+\text{Overvaluation} = \frac{115.98 - 70.67}{115.98} \approx 39.1\%
+\]
+
+---
+
+### Interpretation
+
+Our base-case DCF suggests that ExxonMobil’s equity is trading materially
+above our estimate of intrinsic value, even after applying:
+
+- a conservative **2%** long-run terminal growth rate, and  
+- a market-based **9.06%** WACC built from CAPM and the company’s current capital structure.
+
+Only under meaningfully **lower discount rates** or **structurally higher
+sustainable free cash flows** does the intrinsic value approach the
+current market price.
+
+---
+
+### Trading Comparables Cross-Check – *Pending Stage 8*
+
+This section will benchmark XOM against global integrated energy peers using:
+
+- **EV/EBITDA**
+- **P/E**
+- **FCF Yield**
+
+**Objective:** validate whether relative multiples corroborate or challenge
+the DCF conclusion.
+
+*Peer set selection and data ingestion in progress.*
+
+---
+
+### Precedent Transactions – *Pending Stage 9*
+
+This module will analyse sector M&A transactions, comparing:
+
+- **Deal EV/EBITDA**
+- **Premium-to-undisturbed share prices**
+- **Asset / cyclicality characteristics vs. XOM**
+
+**Objective:** establish a valuation floor/ceiling grounded in real deal activity.
+
+*Transaction universe under construction.*
+
+---
+
+### Infrastructure-Style LBO Scenario – *Pending Stage 10*
+
+A leverage-case scenario assessing:
+
+- capital structure constraints,
+- debt capacity relative to commodity cash flows,
+- sponsor IRR at 5-year exit.
+
+**Objective:** determine whether XOM can be valued as a yield-bearing
+infrastructure-like asset.
+
+*Exit assumptions and debt schedule to be integrated after comps.*
+
+---
+## Build Status — Stage 7 Complete
+
+This repository has successfully implemented the first fully operational leg
+of the valuation stack. The model now transitions from demonstration logic
+to a real-data, capital-markets-ready framework.
+
+### Deliverables Completed
+
+- **Clean DCF engine** (`src/dcf.py`)
+- **Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
+- **Market-based WACC** derived from CAPM & capital structure
+- **Enterprise value computed** using real cash flows
+- **Equity value & intrinsic per-share price**
+- **Historical capital-structure valuation impact** (optional module)
+- **EV vs WACC sensitivity chart**
+- **Final valuation output exported** to  
+  `data/processed/xom_final_valuation.csv`
+- **Valuation conclusion added** to `README.md`
+
+---
+
+### Stage 7 Status
+
+| Component | Status |
+|----------|-------|
+| Real DCF Valuation | **✔️ Completed** |
+| Sensitivity Analysis | **✔️ Completed** |
+| CSV Export | **✔️ Completed** |
+| README Integration | **✔️ Completed** |
+| Trading Comps | 🔜 Stage 8 |
+| Precedent Transactions | 🔜 Stage 9 |
+| LBO Scenario | 🔜 Stage 10 |
+
+---
+
+### Next Step
+
+**Stage 8 – Trading Comparables Cross-Check**
+
+Building a peer set and integrating relative valuation metrics (EV/EBITDA,
+P/E, FCF yield) to confirm or challenge the DCF outcome.
 
 ---
 
