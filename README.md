@@ -36,8 +36,10 @@ exxonmobil-valuation/
 ├─ models/
 │  ├─ dcf/
 │  │  └─ DCF_ExxonMobil.xlsx
-│  └─ lbo/
-│     └─ LBO_ExxonInfrastructure.xlsx
+│  ├─lbo/
+│  │  └─ LBO_ExxonInfrastructure.xlsx
+│  └─ comps/
+│     └─ Trading_Comps_XOM.xlsx
 ├─ notebooks/
 │  └─ valuation_demo.ipynb
 └─ src/
