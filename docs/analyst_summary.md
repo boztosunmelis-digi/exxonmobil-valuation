@@ -1,4 +1,4 @@
-# ExxonMobil (XOM) — Analyst Summary (Stage 11)
+# ExxonMobil (XOM) - Analyst Summary (Stage 9)
 
 **As of:** December 2025  
 **Universe:** Integrated Oil & Gas  
