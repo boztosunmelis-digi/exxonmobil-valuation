@@ -122,21 +122,29 @@ valuation frameworks are scaffolded for subsequent stages.
 
 ---
 
-### Discounted Cash Flow (DCF) - Completed
+### Discounted Cash Flow (DCF) Cross-Check
 
-**Base Case Assumptions**
+> **Note:** The DCF is an intrinsic, forward-looking valuation and is highly sensitive to WACC, terminal assumptions, and mid-cycle commodity normalisation. Outputs should be refreshed when macro inputs, capital structure, or forward free-cash-flow expectations change.
 
-| Metric | Value |
-|-------:|-------|
-| WACC | **9.06%** |
-| Terminal growth (g) | **2.00%** |
-| Enterprise value (EV) | **\$358.6bn** |
-| Net debt | **\$28.2bn** |
-| Equity value | **\$330.4bn** |
-| Shares outstanding | **4.285bn** |
-| **Implied intrinsic value** | **\$70.67/share** |
+This module implements a **5-year intrinsic valuation** for ExxonMobil (XOM) using a standard cash-low-based approach.
 
----
+The framework uses:
+
+- **Historical FCF anchoring** (2020-2024) and a **2025E forecast baseline**
+- A market-derived **WACC** constructed via CAPM
+- Terminal value calculated using the **Gordon Growth** method, with sensitivity around discount and terminal assumptions
+
+**Base-case outputs:**
+
+- **WACC:** **9.06%**
+- **Terminal growth (g):** **2.00%**
+- **Enterprise Value (EV):** **$358.6bn**
+- **Net debt:** **$28.2bn**
+- **Equity value:** **$330.4bn**
+- **Shares outstanding:** **4.285bn**
+- **Implied intrinsic value:** **$70.67/share**
+
+**Objective:** establish a clean intrinsic valuation anchor and quantify the divergence versus market pricing, forming the foundation against which relative, transaction-based, and sponsor-lens cross-checks are evaluated.
 
 ### Market Check
 
@@ -147,8 +155,6 @@ valuation frameworks are scaffolded for subsequent stages.
 \[
 \text{Overvaluation} = \frac{115.98 - 70.67}{115.98} \approx 39.1\%
 \]
-
----
 
 ### Interpretation
 
@@ -164,37 +170,73 @@ current market price.
 
 ---
 
-### Trading Comparables Cross-Check 
+### Cost of Capital (WACC) Cross-Check
 
-> **Note:** Trading multiples are forward-looking (2025E-style) and should  
-> be refreshed from a data provider such as Bloomberg/Refinitiv/Koyfin/  
-> FactSet before using this model in a professional setting.
+> **Note:** WACC is a critical valuation input and should be refreshed using live market data (risk-free rate, beta, equity risk premium, credit spreads) when applying this framework in interviews or professional settings. Small changes in WACC can materially impact DCF enterprise value.
 
-A trading comps framework is implemented in the notebook and benchmarks
-**ExxonMobil (XOM)** against a global integrated energy peer set:
+This module constructs ExxonMobil’s **discount rate** using a market-consistent methodology aligned with investment banking and equity research standards.
 
-- **Chevron (CVX)**
+The framework incorporates:
 
-- **Shell plc (SHEL)**
+- **Risk-free rate** sourced from U.S. Treasury yields
+- **Equity beta** calibrated to a large-cap integrated energy peer set
+- **Market risk premium** consistent with IB benchmark assumptions
+- **Cost of debt** aligned with ExxonMobil’s credit quality and spread environment
+- **Target capital structure weights** applied at the enterprise level
+  
+**Base-case output:**
 
-- **BP plc (BP)**
+- **WACC:** **9.06%**
 
-- **TotalEnergies SE (TTE)**
+**Objective:** ensure the DCF discount rate is transparent, defensible, and reproducible, while providing a clear sensitivity mechanism linking changes in capital-market conditions to intrinsic valuation outcomes.
 
-- **ConocoPhillips (COP)**
+### Market Check
+
+At the base-case WACC of **9.06%**, ExxonMobil’s discounted cash flows imply an intrinsic equity value of **$70.67/share**, materially below the current spot price of **$115.98/share**.
+
+### Interpretation
+
+The WACC implied by current capital-market conditions embeds a **meaningful required return** for equity holders, reflecting both commodity cyclicality and macro risk premia. Given this discount rate, ExxonMobil’s current market valuation appears to **price in lower risk or structurally stronger cash-flow durability** than assumed under conservative mid-cycle conditions.
+
+As a result, **downward pressure on intrinsic value is driven primarily by discount-rate discipline**, not by overly pessimistic operating assumptions.
+
+---
+
+### Trading Comparables Cross-Check
+
+> **Note:** Trading multiples are forward-looking (2025E-style) and should be refreshed from a data provider such as Bloomberg, Refinitiv, Koyfin, or FactSet before using this model in a professional setting.
+
+A trading comps framework benchmarks **ExxonMobil (XOM)** against a global integrated energy peer set:
+
+- **Chevron (CVX)**  
+- **Shell plc (SHEL)**  
+- **BP plc (BP)**  
+- **TotalEnergies SE (TTE)**  
+- **ConocoPhillips (COP)**  
 
 The model compares:
 
-- **EV/EBITDA 2025E**
-
-- **P/E 2025E**
-
-- **FCF Yield 2025E**
+- **EV/EBITDA 2025E**  
+- **P/E 2025E**  
+- **FCF Yield 2025E**  
 
 and computes **peer medians** and **relative premiums/discounts** versus XOM.
 
+### Base-Case Output
+
+- XOM trades at a **premium on EV/EBITDA and P/E**
+- XOM exhibits a **lower FCF yield** relative to the peer median
+
 **Objective:** assess whether market-implied valuation multiples corroborate
 or contradict the intrinsic value obtained via the DCF.
+
+### Market Check
+
+Relative valuation indicates that public markets are willing to pay **higher multiples for ExxonMobil’s earnings and EBITDA stream**, despite a lower implied cash-flow yield versus peers.
+
+### Interpretation
+
+The trading comps cross-check suggests that ExxonMobil’s equity valuation reflects **perceived quality, scale, and cash-flow durability**, rather than purely realised free cash flows. While this does not invalidate the DCF, it highlights that the market is **pricing forward expectations and narrative momentum**, creating tension with conservative intrinsic assumptions.
 
 ---
 
@@ -202,103 +244,76 @@ or contradict the intrinsic value obtained via the DCF.
 
 > **Note:** Precedent deal multiples are event-driven and cyclical, not perpetual valuations. They should be refreshed from public filings, press releases, or data providers such as Bloomberg, Refinitiv, Koyfin, or FactSet when updating this model for interviews or case studies.
 
-This module benchmarks ExxonMobil’s valuation against **recent large-scale oil & gas M&A transactions**, where acquirers paid control premiums for strategic reserves, scale, and basin access.
+This module benchmarks ExxonMobil’s valuation against **large-scale oil & gas M&A transactions**, where acquirers paid control premiums for strategic reserves, scale, and basin access.
 
 The framework analyses:
 
-- **Deal EV/EBITDA multiples**
+- **Deal EV/EBITDA multiples**  
+- **Transaction enterprise values**  
+- **Premiums to undisturbed targets**  
+- **Asset quality and cyclicality drivers**  
 
-- **Transaction enterprise values**
+### Base-Case Output
 
-- **Premiums to undisturbed targets**
+Applying **median precedent EV/EBITDA multiples** to ExxonMobil’s forward EBITDA produces an **implied enterprise-value range** spanning below and above the DCF-derived EV.
 
-- **Asset quality and cyclicality drivers**
+**Objective:** provide a market-tested triangulation point linking public-market valuation to real transaction pricing.
 
-By applying **median EV/EBITDA multiples** from landmark transactions to ExxonMobil’s forward EBITDA, we generate an **implied enterprise-value range** that acts as:
+### Market Check
 
-- a **valuation floor** (low-multiple transactions, cyclical assets), and
+Precedent transaction pricing provides an external reference point grounded in **real capital deployment decisions**, rather than public-market sentiment.
 
-- a **valuation ceiling** (premium basin access, strategic reserves, advantaged infrastructure)
+### Interpretation
 
-This provides a **market-tested check** on our DCF:
-
-- If precedent multiples imply **EVs materially below DCF**, markets may question ExxonMobil’s long-term FCF durability.
-
-- If they imply **EVs above DCF**, precedent activity may validate strategic scarcity value or consolidation premiums.
-
----
-
-### Infrastructure-Style LBO Scenario 
-
-A leverage-case scenario assessing:
-
-- capital structure constraints,
-- debt capacity relative to commodity cash flows,
-- sponsor IRR at 5-year exit.
-
-**Objective:** determine whether XOM can be valued as a yield-learing
-infrastructure-like asset.
-
-*Exit assumptions and debt schedule to be integrated after comps.*
-
----
-## Build Status - Stage 7 Complete
-
-This repository has successfully implemented the first fully operational leg
-of the valuation stack. The model now transitions from demonstration logic
-to a real-data, capital-markets-ready framework.
-
-### Deliverables Completed
-
-- **Clean DCF engine** (`src/dcf.py`)
-- **Real ExxonMobil FCF history** (2020–2024) and **2025 forecast**
-- **Market-based WACC** derived from CAPM & capital structure
-- **Enterprise value computed** using real cash flows
-- **Equity value & intrinsic per-share price**
-- **Historical capital-structure valuation impact** (optional module)
-- **EV vs WACC sensitivity chart**
-- **Final valuation output exported** to  
-  `data/processed/xom_final_valuation.csv`
-- **Valuation conclusion added** to `README.md`
+The precedent cross-check frames a **valuation corridor** rather than a point estimate. Where precedent-implied values exceed the DCF, markets may be recognising **strategic scarcity value or consolidation premiums**. Where they fall below, they underscore sensitivity to cycle timing and asset quality. In aggregate, precedents neither decisively refute nor fully validate the DCF, but **bound the plausible valuation range**.
 
 ---
 
-### Stage 7 Status
+### Infrastructure-Style LBO Cross-Check
 
-| Component | Status |
-|----------|-------|
-| Real DCF Valuation | **Completed** |
-| Sensitivity Analysis | **Completed** |
-| CSV Export | **Completed** |
-| README Integration | **Completed** |
-| Trading Comps | Stage 8 |
-| Precedent Transactions | Stage 9 |
-| LBO Scenario | Stage 10 |
+> **Note:** This scenario is a sponsor-lens plausibility bound rather than a primary valuation method. For a mega-cap integrated major, the analysis is framed as “infrastructure-style” to stress-test leverage capacity, cash-flow durability, and exit feasibility under conservative assumptions.
 
----
+This module evaluates ExxonMobil under an **infrastructure-style leveraged buyout framework**, reflecting how a financial sponsor might assess the asset’s capacity to support leverage and deliver equity returns.
 
-### Next Step
+The framework analyses:
 
-**Stage 8 - Trading Comparables Cross-Check**
+- **Entry enterprise value** implied by an EV/EBITDA multiple and forward EBITDA  
+- **Debt capacity** under conservative leverage assumptions (~2-3x EBITDA)  
+- **Equity investment size** and annual cash distributions  
+- **Exit equity value** based on stable terminal EV/EBITDA assumptions  
+- **Sponsor IRR** and sensitivity to entry valuation  
 
-Building a peer set and integrating relative valuation metrics (EV/EBITDA,
-P/E, FCF yield) to confirm or challenge the DCF outcome.
+### Base-Case Output
+
+Under conservative leverage and flat exit multiples, the implied sponsor IRR falls **below typical private-equity hurdle rates**, absent meaningful operational upside or valuation multiple expansion.
+
+**Objective:** establish a plausibility bound for leverage-supported valuation and test whether intrinsic and public-market values are sponsor-feasible.
+
+### Market Check
+
+This indicates that ExxonMobil’s current valuation leaves **limited room for leveraged financial engineering**, reinforcing its classification as a **yield-oriented, capital-return asset** rather than a classic buyout candidate.
+
+### Interpretation
+
+The LBO cross-check supports the DCF conclusion: ExxonMobil’s valuation is **already efficient** under reasonable leverage assumptions. Any upside must therefore come from **operational outperformance or structural improvements**, not balance-sheet optimisation.
 
 ---
 
 ### **Conclusion**
 
-ExxonMobil’s valuation is **supported by multiple methodologies**.  
-The DCF output triangulates cleanly against comparables and transaction benchmarks, indicating:
+ExxonMobil’s valuation has been assessed using a **multi-method framework** spanning intrinsic, relative, transaction-based, and sponsor-lens approaches. While each methodology provides a distinct perspective, they converge on a consistent message regarding current market pricing.
 
-> **The implied fair value lies around the midpoint of the modeled range** and is defensible under conservative assumptions.
+The **base-case DCF**, constructed using real historical free cash flows and a market-based **9.06% WACC**, implies an intrinsic value of **\$70.67 per share**, materially below the current market price of **\$115.98**. This establishes a clear intrinsic anchor suggesting **overvaluation under conservative assumptions**.
 
-This mirrors the valuation logic used in sell-side equity research and investment banking pitches, where multiple methods are used to converge on a defensible price target.
+Relative valuation cross-checks (trading comparables) indicate that ExxonMobil trades at **premium EV/EBITDA and P/E multiples** alongside a **lower FCF yield** versus integrated energy peers. This suggests that public markets are pricing in **durability, scale advantages, and capital-return momentum** beyond what is embedded in the base-case cas-flow model.
 
----
+Precedent transaction analysis provides a **range-based sense check**, with implied enterprise values sensitive to deal mix, cycle timing, and strategic premiums. While select transactions support higher valuation ceilings, these outcomes typically reflect **control premiums or asset-specific scarcity**, rather than steady-state intrinsic value.
 
-*Note:* Replace placeholder `XX` values with your actual model outputs once finalized.  
-If not available, leave as is — the structure alone proves your methodology.
+Ultimately, the infrastructure-style **LBO scenario** frames an upper-bound plausibility test. Under conservative leverage and stable exit assumptions, equity returns remain feasible but offer limited margin for valuation expansion at current prices, reinforcing the concept that much of the upside is already priced in.
+
+**Accumulated onto each other**, the valuation stack indicates that ExxonMobil’s current share price reflects **optimistic forward expectations** relative to intrinsic cash-flow fundamentals. Absent structurally higher free cash flows, sustained margin outperformance, or a materially lower cost of capital, the model suggests that **downside risk dominates upside potential** at prevailing market levels.
+
+This triangulated conclusion projects professional sell-side and investment banking valuation practice, where multiple methodologies are used not to force convergence, but to **identify where market pricing diverges from fundamental value**.
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Language](https://img.shields.io/badge/python-3.10-blue)
