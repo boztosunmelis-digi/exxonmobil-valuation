@@ -24,7 +24,7 @@ def main():
     mispricing_pct = (SPOT_PRICE / implied_price - 1.0) * 100.0
     over_under = "overvalued" if mispricing_pct > 0 else "undervalued"
 
-    md = f"""# ExxonMobil (XOM) — Analyst Summary (Stage 11)
+    md = f"""# ExxonMobil (XOM) — Analyst Summary (Stage 9)
 
 **As of:** {AS_OF_STR}  
 **Universe:** Integrated Oil & Gas  
