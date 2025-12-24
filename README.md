@@ -301,7 +301,7 @@ The LBO cross-check supports the DCF conclusion: ExxonMobil’s valuation is **a
 
 ### Security Posture
 
-This project uses standard dependency monitoring appropriate for a research and modeling codebase and does not expose runtime services, secrets, or production infrastructure. All security advisories are reviewed for execution relevance prior to action.
+This project uses standard dependency monitoring appropriate for a **research and modeling codebase** and does not expose runtime services, secrets, or production infrastructure. All security advisories are reviewed for execution relevance prior to action.
 
 - Dependencies are managed via requirements.txt and monitored using GitHub Dependabot
 
@@ -310,8 +310,6 @@ This project uses standard dependency monitoring appropriate for a research and 
 - All outputs are generated locally (CSV, Excel, PNG) with no external execution hooks
 
 - Identified dependency advisories are reviewed for actual execution relevance before remediation or dismissal
-
-The project is intended for **educational, analytical, and portfolio demonstration purposes** and does not expose runtime services or production infrastructure.
 
 ---
 
