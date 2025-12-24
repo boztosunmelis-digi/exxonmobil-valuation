@@ -1,6 +1,10 @@
 # exxonmobil-valuation
 ![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Language](https://img.shields.io/badge/python-3.x-blue) ![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20WACC%20%7C%20LBO-orange) ![Security](https://img.shields.io/badge/security-dependency%20monitoring-blue) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
+> **Security Posture Intro:** This repository uses automated dependency monitoring via GitHub Dependabot.
+No production credentials or sensitive data are stored. Identified risks are
+evaluated and documented where applicable.
+
 Full 5-year intrinsic valuation suite for ExxonMobil, including DCF, WACC build, trading comps, precedent transactions, and an LBO scenario with a Python-based valuation engine.
 # ExxonMobil Valuation: 5-Year DCF & LBO Framework
 
