@@ -26,6 +26,28 @@ Users are expected to:
 
 ---
 
+## Dependency Advisories
+
+This repository may include development-time dependencies (e.g. Jupyter, nbconvert)
+that trigger automated vulnerability alerts.
+
+### nbconvert (Windows-only advisory)
+A Dependabot advisory exists for `nbconvert` related to PDF conversion on Windows
+platforms involving uncontrolled search paths.
+
+**Impact assessment:**
+- Affects Windows systems only
+- Requires local execution (''jupyter nbconvert --to pdf'')
+- Not applicable to macOS/Linux workflows
+- Not used in automated or production pipelines
+
+**Mitigation:**
+- PDF conversion is not required to run or reproduce this project
+- Users are advised to avoid PDF export via nbconvert on Windows
+- HTML/PNG exports are used for all documentation artifacts
+
+---
+
 ## Reporting a Vulnerability
 
 If you believe you have identified a **security issue** (e.g. malicious
