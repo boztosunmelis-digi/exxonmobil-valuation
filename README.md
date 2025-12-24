@@ -28,28 +28,43 @@ exxonmobil-valuation/
 ├─ README.md
 ├─ .gitignore
 ├─ requirements.txt
+├─ SECURITY.md
+├─ CODE_OF_CONDUCT.md
+├─ LICENSE
+├─ Makefile
+├─ run_all.py
+│
 ├─ docs/
-│  └─ methodology.md
+│  ├─ analyst_summary.md          # Auto-generated equity research-style summary
+│  └─ figures/                    # Exported charts (PNG)
+│     ├─ ev_vs_wacc.png
+│     ├─ comps_multiples_bar.png
+│     ├─ fcf_yield_bar.png
+│     └─ irr_sensitivity.png
+│
 ├─ data/
-│  ├─ raw/           # Source data (10-K extracts, SEC filings, etc.)
+│  ├─ raw/                        # Source data (10-K extracts, filings)
 │  │  └─ .gitkeep
-│  └─ processed/     # Cleaned inputs after transformation
-│     └─ .gitkeep
+│  └─ processed/                  # Cleaned & model-ready data
+│     └─ xom_final_valuation.csv
+│
 ├─ models/
 │  ├─ dcf/
-│  │  └─ DCF_ExxonMobil.xlsx
-│  ├─lbo/
-│  │  └─ LBO_ExxonInfrastructure.xlsx
-│  └─ comps/
-│     └─ Trading_Comps_XOM.xlsx
+│  │  └─ DCF_ExxonMobil.xlsx      # Canonical DCF model (Python-generated)
+│  ├─ comps/
+│  │  └─ Trading_Comps_XOM.xlsx   # Trading comparables model
+│  └─ lbo/
+│     └─ LBO_ExxonInfrastructure.xlsx  # Infrastructure-style LBO model
+│
 ├─ notebooks/
-│  └─ valuation_demo.ipynb
+│  └─ valuation_demo.ipynb        # End-to-end valuation notebook
+│
 └─ src/
-   ├─ __init__.py          # Package initialiser
-   ├─ dcf.py               # DCF valuation engine
-   ├─ wacc.py              # WACC computation
-   ├─ comps.py             # Trading comps logic
-   └─ utils.py             # Shared helpers
+   ├─ __init__.py                 # Package initialiser
+   ├─ dcf.py                      # DCF valuation engine
+   ├─ wacc.py                     # WACC computation logic
+   ├─ comps.py                    # Trading comps framework
+   └─ utils.py                    # Shared helper utilities
 ```
 
 ## How to Run
