@@ -1,7 +1,5 @@
 # exxonmobil-valuation
-![Status](https://img.shields.io/badge/status-complete-brightgreen)
-![Language](https://img.shields.io/badge/python-3.x-blue)
-![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20WACC%20%7C%20LBO-orange)
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Language](https://img.shields.io/badge/python-3.x-blue) ![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20WACC%20%7C%20LBO-orange) ![Security](https://img.shields.io/badge/security-dependency%20monitoring-blue) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 Full 5-year intrinsic valuation suite for ExxonMobil, including DCF, WACC build, trading comps, precedent transactions, and an LBO scenario with a Python-based valuation engine.
 # ExxonMobil Valuation: 5-Year DCF & LBO Framework
@@ -43,7 +41,7 @@ exxonmobil-valuation/
 ├─ notebooks/
 │  └─ valuation_demo.ipynb
 └─ src/
-   ├─ __init__.py          # Package initializer
+   ├─ __init__.py          # Package initialiser
    ├─ dcf.py               # DCF valuation engine
    ├─ wacc.py              # WACC computation
    ├─ comps.py             # Trading comps logic
@@ -299,6 +297,20 @@ The LBO cross-check supports the DCF conclusion: ExxonMobil’s valuation is **a
 
 ---
 
+### Security Posture
+
+This project uses standard dependency monitoring appropriate for a **research and modeling codebase** and does not expose runtime services, secrets, or production infrastructure. All security advisories are reviewed for execution relevance prior to action.
+
+- Dependencies are managed via requirements.txt and monitored using GitHub Dependabot
+
+- No credentials, secrets, or production keys are stored in the repository
+
+- All outputs are generated locally (CSV, Excel, PNG) with no external execution hooks
+
+- Identified dependency advisories are reviewed for actual execution relevance before remediation or dismissal
+
+---
+
 ### **Conclusion**
 
 ExxonMobil’s valuation has been assessed using a **multi-method framework** spanning intrinsic, relative, transaction-based, and sponsor-lens approaches. While each methodology provides a distinct perspective, they converge on a consistent message regarding current market pricing.
@@ -315,7 +327,4 @@ Ultimately, the infrastructure-style **LBO scenario** frames an upper-bound plau
 
 This triangulated conclusion projects professional sell-side and investment banking valuation practice, where multiple methodologies are used not to force convergence, but to **identify where market pricing diverges from fundamental value**.
 
-![Status](https://img.shields.io/badge/status-complete-brightgreen)
-![Language](https://img.shields.io/badge/python-3.10-blue)
-![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20LBO%20%7C%20WACC-orange)
-
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Language](https://img.shields.io/badge/python-3.x-blue) ![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20WACC%20%7C%20LBO-orange) ![Security](https://img.shields.io/badge/security-dependency%20monitoring-blue) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
