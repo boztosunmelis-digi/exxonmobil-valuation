@@ -43,7 +43,7 @@ exxonmobil-valuation/
 ├─ notebooks/
 │  └─ valuation_demo.ipynb
 └─ src/
-   ├─ __init__.py          # Package initializer
+   ├─ __init__.py          # Package initialiser
    ├─ dcf.py               # DCF valuation engine
    ├─ wacc.py              # WACC computation
    ├─ comps.py             # Trading comps logic
@@ -296,6 +296,22 @@ This indicates that ExxonMobil’s current valuation leaves **limited room for l
 ### Interpretation
 
 The LBO cross-check supports the DCF conclusion: ExxonMobil’s valuation is **already efficient** under reasonable leverage assumptions. Any upside must therefore come from **operational outperformance or structural improvements**, not balance-sheet optimisation.
+
+---
+
+### Security Posture
+
+This project uses standard dependency monitoring appropriate for a research and modeling codebase and does not expose runtime services, secrets, or production infrastructure. All security advisories are reviewed for execution relevance prior to action.
+
+- Dependencies are managed via requirements.txt and monitored using GitHub Dependabot
+
+- No credentials, secrets, or production keys are stored in the repository
+
+- All outputs are generated locally (CSV, Excel, PNG) with no external execution hooks
+
+- Identified dependency advisories are reviewed for actual execution relevance before remediation or dismissal
+
+The project is intended for **educational, analytical, and portfolio demonstration purposes** and does not expose runtime services or production infrastructure.
 
 ---
 
