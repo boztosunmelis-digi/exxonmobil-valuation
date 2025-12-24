@@ -37,7 +37,7 @@ platforms involving uncontrolled search paths.
 
 **Impact assessment:**
 - Affects Windows systems only
-- Requires local execution (''jupyter nbconvert --to pdf'')
+- Requires local execution (''jupyter nbconvert to pdf'')
 - Not applicable to macOS/Linux workflows
 - Not used in automated or production pipelines
 
