@@ -1,6 +1,10 @@
 # exxonmobil-valuation
 ![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Language](https://img.shields.io/badge/python-3.x-blue) ![Model](https://img.shields.io/badge/valuation-DCF%20%7C%20WACC%20%7C%20LBO-orange) ![Security](https://img.shields.io/badge/security-dependency%20monitoring-blue) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
+> **Security Posture Intro:** This repository uses automated dependency monitoring via GitHub Dependabot.
+No production credentials or sensitive data are stored. Identified risks are
+evaluated and documented where applicable.
+
 Full 5-year intrinsic valuation suite for ExxonMobil, including DCF, WACC build, trading comps, precedent transactions, and an LBO scenario with a Python-based valuation engine.
 # ExxonMobil Valuation: 5-Year DCF & LBO Framework
 
@@ -24,28 +28,43 @@ exxonmobil-valuation/
 ├─ README.md
 ├─ .gitignore
 ├─ requirements.txt
+├─ SECURITY.md
+├─ CODE_OF_CONDUCT.md
+├─ LICENSE
+├─ Makefile
+├─ run_all.py
+│
 ├─ docs/
-│  └─ methodology.md
+│  ├─ analyst_summary.md          # Auto-generated equity research-style summary
+│  └─ figures/                    # Exported charts (PNG)
+│     ├─ ev_vs_wacc.png
+│     ├─ comps_multiples_bar.png
+│     ├─ fcf_yield_bar.png
+│     └─ irr_sensitivity.png
+│
 ├─ data/
-│  ├─ raw/           # Source data (10-K extracts, SEC filings, etc.)
+│  ├─ raw/                        # Source data (10-K extracts, filings)
 │  │  └─ .gitkeep
-│  └─ processed/     # Cleaned inputs after transformation
-│     └─ .gitkeep
+│  └─ processed/                  # Cleaned & model-ready data
+│     └─ xom_final_valuation.csv
+│
 ├─ models/
 │  ├─ dcf/
-│  │  └─ DCF_ExxonMobil.xlsx
-│  ├─lbo/
-│  │  └─ LBO_ExxonInfrastructure.xlsx
-│  └─ comps/
-│     └─ Trading_Comps_XOM.xlsx
+│  │  └─ DCF_ExxonMobil.xlsx      # Canonical DCF model (Python-generated)
+│  ├─ comps/
+│  │  └─ Trading_Comps_XOM.xlsx   # Trading comparables model
+│  └─ lbo/
+│     └─ LBO_ExxonInfrastructure.xlsx  # Infrastructure-style LBO model
+│
 ├─ notebooks/
-│  └─ valuation_demo.ipynb
+│  └─ valuation_demo.ipynb        # End-to-end valuation notebook
+│
 └─ src/
-   ├─ __init__.py          # Package initialiser
-   ├─ dcf.py               # DCF valuation engine
-   ├─ wacc.py              # WACC computation
-   ├─ comps.py             # Trading comps logic
-   └─ utils.py             # Shared helpers
+   ├─ __init__.py                 # Package initialiser
+   ├─ dcf.py                      # DCF valuation engine
+   ├─ wacc.py                     # WACC computation logic
+   ├─ comps.py                    # Trading comps framework
+   └─ utils.py                    # Shared helper utilities
 ```
 
 ## How to Run
@@ -88,7 +107,7 @@ The valuation stack combines multiple approaches commonly used in investment ban
 - Models IRR profile for a financial sponsor considering oil & gas infrastructure assets
 
 **Why this matters:**  
-This is not a single DCF. It is a **full valuation stack** that triangulates intrinsic, relative, and transaction-based value - exactly what analysts produce before issuing a rating or a fairness opinion.
+This is not a single DCF. It is a **full valuation stack** that triangulates intrinsic, relative, and transaction-based value.
 
 ## Files Included
 
