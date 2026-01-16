@@ -5,3 +5,4 @@ openpyxl
 scipy
 matplotlib
 yfinance
+urllib3>=2.6.3
