@@ -28,23 +28,75 @@ Users are expected to:
 
 ## Dependency Advisories
 
-This repository may include development-time dependencies (e.g. Jupyter, nbconvert)
-that trigger automated vulnerability alerts.
+This repository may include development-time or transitive dependencies that
+trigger automated vulnerability alerts. These advisories are reviewed and
+addressed using a risk-based, usage-aware security posture.
+
+---
 
 ### nbconvert (Windows-only advisory)
+
 A Dependabot advisory exists for `nbconvert` related to PDF conversion on Windows
 platforms involving uncontrolled search paths.
 
 **Impact assessment:**
 - Affects Windows systems only
-- Requires local execution (''jupyter nbconvert to pdf'')
-- Not applicable to macOS/Linux workflows
-- Not used in automated or production pipelines
+- Requires local execution (`jupyter nbconvert --to pdf`)
+- Not applicable to macOS or Linux environments
+- Not used in automated, CI, or production workflows
 
 **Mitigation:**
-- PDF conversion is not required to run or reproduce this project
-- Users are advised to avoid PDF export via nbconvert on Windows
-- HTML/PNG exports are used for all documentation artifacts
+- PDF export is not required to run or reproduce this project
+- Documentation artifacts are exported as HTML or PNG
+- Users on Windows are advised to avoid PDF conversion via `nbconvert`
+
+---
+
+### protobuf (JSON recursion depth advisory)
+
+A denial-of-service (DoS) vulnerability has been reported in
+`google.protobuf.json_format.ParseDict()` related to recursion depth bypass when
+parsing nested `google.protobuf.Any` messages.
+
+**Context:**
+- `protobuf` is included only as a **transitive dependency** (e.g., via
+  market-data libraries such as `yfinance`)
+- This repository does **not** parse or deserialise untrusted JSON into protocol
+  buffer messages
+- The vulnerable API (`google.protobuf.json_format.ParseDict()`) is not invoked
+  anywhere in the codebase
+
+**Mitigation:**
+- No untrusted JSON is parsed into protobuf structures
+- No protobuf `Any` deserialisation logic is used
+- Dependency updates are monitored, and parent libraries are kept current
+- Risk is mitigated through constrained usage rather than forced pinning, given
+  the **absence of an upstream patch** at the time of writing
+
+---
+
+### urllib3 (version constraint advisory)
+
+A security advisory affecting older versions of `urllib3` was flagged via
+automated dependency surveillance.
+
+**Mitigation:**
+- The project explicitly enforces `urllib3>=2.6.3` in `requirements.txt`
+- Local environments have been updated accordingly
+- No custom HTTP client logic is implemented beyond the standard library implementation
+
+---
+
+## Security posture
+
+This repository does not process untrusted user input, does not deserialise
+arbitrary JSON into protocol buffer messages, and does not expose network-facing
+services.
+
+Dependencies are used in a constrained, research-oriented context and are kept
+up to date where feasible. Known upstream vulnerabilities without patched
+releases are mitigated through controlled usage, scope limitation, and
+continuous dependency surveillance.
 
 ---
 
