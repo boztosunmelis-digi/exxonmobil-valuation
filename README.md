@@ -3,7 +3,7 @@
 
 > **Security Posture Intro:** This repository uses automated dependency monitoring via GitHub Dependabot.
 No production credentials or sensitive data are stored. Identified risks are
-evaluated and documented where applicable.
+evaluated and documented where applicable... the entirety of Security Posture is to be found below, right prior to the Conclusion for your perusal.
 
 Full 5-year intrinsic valuation suite for ExxonMobil, including DCF, WACC build, trading comps, precedent transactions, and an LBO scenario with a Python-based valuation engine.
 # ExxonMobil Valuation: 5-Year DCF & LBO Framework
@@ -327,6 +327,12 @@ This project uses standard dependency monitoring appropriate for a **research an
 - All outputs are generated locally (CSV, Excel, PNG) with no external execution hooks
 
 - Identified dependency advisories are reviewed for actual execution relevance before remediation or dismissal
+
+> **Auxiliary and as of recently,**
+It is to be reinforced that this project does not process untrusted user input or deserialise arbitrary
+JSON into protocol buffer messages. Dependencies such as `protobuf` are included
+only transitively (e.g., via `yfinance`) and are kept up to date. Known upstream
+vulnerabilities without patched releases are mitigated via constrained implementation and continuous dependency surveillance.
 
 ---
 
