@@ -28,8 +28,8 @@ exxonmobil-valuation/
 ├─ README.md
 ├─ .gitignore
 ├─ .github/
-├─ workflows/                     # CI/CD and repository automation
-│  └─ codeql.yml                  # CodeQL static analysis for security and code quality
+│  ├─workflows/                     # CI/CD and repository automation
+│    └─ codeql.yml                  # CodeQL static analysis for security and code quality
 ├─ requirements.txt
 ├─ SECURITY.md
 ├─ CODE_OF_CONDUCT.md
