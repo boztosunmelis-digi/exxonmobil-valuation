@@ -170,9 +170,9 @@ The framework uses:
 - **DCF implied intrinsic price:** **\$70.67/share**  
 - **Implied mispricing:** ExxonMobil appears **≈39% overvalued** vs. intrinsic value
 
-\[
+$$
 \text{Overvaluation} = \frac{115.98 - 70.67}{115.98} \approx 39.1\%
-\]
+$$
 
 ### Interpretation
 
