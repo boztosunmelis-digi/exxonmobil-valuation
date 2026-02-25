@@ -6,3 +6,4 @@ scipy
 matplotlib
 yfinance
 urllib3>=2.6.3
+pillow>=12.1.1
