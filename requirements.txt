@@ -91,7 +91,7 @@ pure_eval==0.2.3
 pyarrow==23.0.1
 pycparser==3.0
 pydeck==0.9.1
-Pygments==2.19.2
+pygments==2.20.0
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
 python-json-logger==4.0.0
